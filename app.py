@@ -145,7 +145,7 @@ else:
                 }
             </style>
             <div class="about-text">
-                <p>This health prediction system was created by:</p>
+                <p>The Multiple Disease Prediction System was devloped by:</p>
             </div>
             <table class="about-table">
                 <tr>
