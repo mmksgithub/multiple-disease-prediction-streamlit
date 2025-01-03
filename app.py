@@ -122,7 +122,7 @@ else:
             st.markdown(f"### Welcome, {st.session_state.user_name}!", unsafe_allow_html=True)
 
     # About Page
-    if selected == "About":
+    if selected == "About Us":
       st.markdown("<h2 style='font-size: 40px; font-weight: bold;'>About</h2>", unsafe_allow_html=True)
       st.markdown("""
           <style>
@@ -162,7 +162,7 @@ else:
               </tr>
               <tr>
                   <td><b>Pranav KP</b></td>
-                  <td><b>3BR22CD04</b></td>
+                  <td><b>3BR22CD045</b></td>
               </tr>
           </table>
       """, unsafe_allow_html=True)
