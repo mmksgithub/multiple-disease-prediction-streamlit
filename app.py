@@ -35,9 +35,9 @@ with st.sidebar:
                            icons=['activity', 'heart', 'person'],
                            default_index=0)
 
-# Pages for disease predictions (no changes here)
-
-
+# Function to check if all inputs are filled
+def check_empty_inputs(inputs):
+    return any(x == "" for x in inputs)
 
 # Diabetes Prediction Page
 if selected == 'Diabetes Prediction':
@@ -72,25 +72,29 @@ if selected == 'Diabetes Prediction':
     with col2:
         Age = st.text_input('Age of the Person')
 
-
     # code for Prediction
     diab_diagnosis = ''
 
     # creating a button for Prediction
-
     if st.button('Diabetes Test Result'):
-
         user_input = [Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin,
                       BMI, DiabetesPedigreeFunction, Age]
 
-        user_input = [float(x) for x in user_input]
-
-        diab_prediction = diabetes_model.predict([user_input])
-
-        if diab_prediction[0] == 1:
-            diab_diagnosis = 'The person is diabetic'
+        if check_empty_inputs(user_input):
+            st.error("Please fill in all the fields before submitting.")
         else:
-            diab_diagnosis = 'The person is not diabetic'
+            try:
+                user_input = [float(x) for x in user_input]
+                diab_prediction = diabetes_model.predict([user_input])
+
+                if diab_prediction[0] == 1:
+                    diab_diagnosis = 'The person is diabetic'
+                else:
+                    diab_diagnosis = 'The person is not diabetic'
+            except ValueError:
+                st.error("Invalid input. Please enter valid numeric values.")
+            except Exception as e:
+                st.error(f"An error occurred during prediction: {e}")
 
     st.success(diab_diagnosis)
 
@@ -145,19 +149,24 @@ if selected == 'Heart Disease Prediction':
     heart_diagnosis = ''
 
     # creating a button for Prediction
-
     if st.button('Heart Disease Test Result'):
-
         user_input = [age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]
 
-        user_input = [float(x) for x in user_input]
-
-        heart_prediction = heart_disease_model.predict([user_input])
-
-        if heart_prediction[0] == 1:
-            heart_diagnosis = 'The person is having heart disease'
+        if check_empty_inputs(user_input):
+            st.error("Please fill in all the fields before submitting.")
         else:
-            heart_diagnosis = 'The person does not have any heart disease'
+            try:
+                user_input = [float(x) for x in user_input]
+                heart_prediction = heart_disease_model.predict([user_input])
+
+                if heart_prediction[0] == 1:
+                    heart_diagnosis = 'The person is having heart disease'
+                else:
+                    heart_diagnosis = 'The person does not have any heart disease'
+            except ValueError:
+                st.error("Invalid input. Please enter valid numeric values.")
+            except Exception as e:
+                st.error(f"An error occurred during prediction: {e}")
 
     st.success(heart_diagnosis)
 
@@ -240,18 +249,24 @@ if selected == "Parkinsons Prediction":
 
     # creating a button for Prediction    
     if st.button("Parkinson's Test Result"):
-
         user_input = [fo, fhi, flo, Jitter_percent, Jitter_Abs,
-                      RAP, PPQ, DDP,Shimmer, Shimmer_dB, APQ3, APQ5,
+                      RAP, PPQ, DDP, Shimmer, Shimmer_dB, APQ3, APQ5,
                       APQ, DDA, NHR, HNR, RPDE, DFA, spread1, spread2, D2, PPE]
 
-        user_input = [float(x) for x in user_input]
-
-        parkinsons_prediction = parkinsons_model.predict([user_input])
-
-        if parkinsons_prediction[0] == 1:
-            parkinsons_diagnosis = "The person has Parkinson's disease"
+        if check_empty_inputs(user_input):
+            st.error("Please fill in all the fields before submitting.")
         else:
-            parkinsons_diagnosis = "The person does not have Parkinson's disease"
+            try:
+                user_input = [float(x) for x in user_input]
+                parkinsons_prediction = parkinsons_model.predict([user_input])
+
+                if parkinsons_prediction[0] == 1:
+                    parkinsons_diagnosis = "The person has Parkinson's disease"
+                else:
+                    parkinsons_diagnosis = "The person does not have Parkinson's disease"
+            except ValueError:
+                st.error("Invalid input. Please enter valid numeric values.")
+            except Exception as e:
+                st.error(f"An error occurred during prediction: {e}")
 
     st.success(parkinsons_diagnosis)
