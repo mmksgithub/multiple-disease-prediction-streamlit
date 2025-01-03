@@ -133,19 +133,19 @@ else:
             Pregnancies = st.text_input('Number of Pregnancies')
 
         with col2:
-            Glucose = st.text_input('Glucose Level in mg/dL')
+            Glucose = st.text_input('Glucose Level in mg/dL (milligrams per deciliter)')
 
         with col3:
-            BloodPressure = st.text_input('Blood Pressure value in mmHg')
+            BloodPressure = st.text_input('Blood Pressure value in mmHg (millimeters of mercury)')
 
         with col1:
-            SkinThickness = st.text_input('Skin Thickness value in mm ')
+            SkinThickness = st.text_input('Skin Thickness value in mm (millimeters)')
 
         with col2:
-            Insulin = st.text_input('Insulin Level in mIU/L')
+            Insulin = st.text_input('Insulin Level in mIU/L (micro International Units per liter)')
 
         with col3:
-            BMI = st.text_input('BMI value in kg/m²')
+            BMI = st.text_input('BMI value in kg/m² (kilograms per square meter)')
 
         with col1:
             DiabetesPedigreeFunction = st.text_input('Diabetes Pedigree Function value')
@@ -186,7 +186,7 @@ else:
         col1, col2, col3 = st.columns(3)
 
         with col1:
-            age = st.text_input('Age')
+            age = st.text_input('Age in years')
 
         with col2:
             sex = st.text_input('Sex')
@@ -195,25 +195,25 @@ else:
             cp = st.text_input('Chest Pain types')
 
         with col1:
-            trestbps = st.text_input('Resting Blood Pressure')
+            trestbps = st.text_input('Resting Blood Pressure in mmHg (millimeters of mercury)')
 
         with col2:
-            chol = st.text_input('Serum Cholestoral in mg/dl')
+            chol = st.text_input('Serum Cholestoral in mg/dl (milligrams per deciliter)')
 
         with col3:
-            fbs = st.text_input('Fasting Blood Sugar > 120 mg/dl')
+            fbs = st.text_input('Fasting Blood Sugar > 120 mg/dl  (milligrams per deciliter)')
 
         with col1:
             restecg = st.text_input('Resting Electrocardiographic results')
 
         with col2:
-            thalach = st.text_input('Maximum Heart Rate achieved')
+            thalach = st.text_input('Maximum Heart Rate achieved in  beats per minute (bpm)' )
 
         with col3:
-            exang = st.text_input('Exercise Induced Angina')
+            exang = st.text_input('Exercise Induced Angina ')
 
         with col1:
-            oldpeak = st.text_input('ST depression induced by exercise')
+            oldpeak = st.text_input('ST depression induced by exercise in mm(millimeters)')
 
         with col2:
             slope = st.text_input('Slope of the peak exercise ST segment')
