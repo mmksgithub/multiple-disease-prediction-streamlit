@@ -3,6 +3,7 @@ import os
 import pickle
 import streamlit as st
 import re  # Regular expression for email validation
+import pandas as pd  # For displaying the table
 
 # Set page configuration
 st.set_page_config(page_title="Health Assistant",
@@ -109,18 +110,17 @@ else:
         selected = option_menu('Multiple Disease Prediction System',
                                ['Diabetes Prediction',
                                 'Heart Disease Prediction',
-                                'Parkinsons Prediction'],
+                                'Parkinsons Prediction',
+                                'About'],
                                menu_icon='hospital-fill',
-                               icons=['activity', 'heart', 'person'],
+                               icons=['activity', 'heart', 'person', 'info-circle'],
                                default_index=0)
 
     # Display user name after login
-    def check_empty_inputs(inputs):
-      return any(x == "" for x in inputs)
-    #st.sidebar.markdown(f"<h2 style='font-size: 30px; font-weight: bold;'>Welcome, {st.session_state.user_name}!</h2>", unsafe_allow_html=True)
     def display_username():
-      if "user_name" in st.session_state:
-          st.markdown(f"### Welcome, {st.session_state.user_name}!", unsafe_allow_html=True)
+        if "user_name" in st.session_state:
+            st.markdown(f"### Welcome, {st.session_state.user_name}!", unsafe_allow_html=True)
+
     # About Page
     if selected == "About":
         st.title("About This Application")
@@ -138,6 +138,7 @@ else:
             'selector': 'th',
             'props': [('font-weight', 'bold')]
         }]))
+
     # Diabetes Prediction Page
     if selected == 'Diabetes Prediction':
         st.title('Diabetes Prediction using ML')
@@ -362,4 +363,3 @@ else:
                     st.error(f"An error occurred during prediction: {e}")
 
         st.success(parkinsons_diagnosis)
-
