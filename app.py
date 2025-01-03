@@ -113,7 +113,7 @@ else:
                                default_index=0)
 
     # Display user name after login
-    st.sidebar.markdown(f"<h2 style='font-size: 24px; font-weight: bold;'>Welcome, {st.session_state.user_name}!</h2>", unsafe_allow_html=True)
+    st.sidebar.markdown(f"<h2 style='font-size: 55px; font-weight: bold;'>Welcome, {st.session_state.user_name}!</h2>", unsafe_allow_html=True)
 
 
     # Diabetes Prediction Page
