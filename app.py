@@ -118,8 +118,8 @@ else:
    
     #st.sidebar.markdown(f"<h2 style='font-size: 30px; font-weight: bold;'>Welcome, {st.session_state.user_name}!</h2>", unsafe_allow_html=True)
     def display_username():
-    if "user_name" in st.session_state:
-        st.markdown(f"### Welcome, {st.session_state.user_name}!", unsafe_allow_html=True)
+      if "user_name" in st.session_state:
+          st.markdown(f"### Welcome, {st.session_state.user_name}!", unsafe_allow_html=True)
 
     # Diabetes Prediction Page
     if selected == 'Diabetes Prediction':
