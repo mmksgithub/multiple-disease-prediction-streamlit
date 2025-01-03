@@ -123,49 +123,49 @@ else:
 
     # About Page
     if selected == "About":
-    st.markdown("<h2 style='font-size: 40px; font-weight: bold;'>About Us</h2>", unsafe_allow_html=True)
-    st.markdown("""
-        <style>
-            .about-text {
-                font-size: 24px;
-                font-weight: bold;
-            }
-            .about-table {
-                font-size: 20px;
-                border: 1px solid black;
-                border-collapse: collapse;
-                width: 100%;
-            }
-            .about-table th, .about-table td {
-                padding: 8px;
-                text-align: center;
-            }
-            .about-table th {
-                background-color: #f2f2f2;
-            }
-        </style>
-        <div class="about-text">
-            <p>This health prediction system was created by:</p>
-        </div>
-        <table class="about-table">
-            <tr>
-                <th>Name</th>
-                <th>USN</th>
-            </tr>
-            <tr>
-                <td><b>Mohammed Moin Khan</b></td>
-                <td><b>3BR22CD034</b></td>
-            </tr>
-            <tr>
-                <td><b>Mohammed Moinuddin</b></td>
-                <td><b>3BR22CD035</b></td>
-            </tr>
-            <tr>
-                <td><b>Pranav KP</b></td>
-                <td><b>3BR22CD04</b></td>
-            </tr>
-        </table>
-    """, unsafe_allow_html=True)
+      st.markdown("<h2 style='font-size: 40px; font-weight: bold;'>About Us</h2>", unsafe_allow_html=True)
+      st.markdown("""
+          <style>
+              .about-text {
+                  font-size: 24px;
+                  font-weight: bold;
+              }
+              .about-table {
+                  font-size: 20px;
+                  border: 1px solid black;
+                  border-collapse: collapse;
+                  width: 100%;
+              }
+              .about-table th, .about-table td {
+                  padding: 8px;
+                  text-align: center;
+              }
+              .about-table th {
+                  background-color: #f2f2f2;
+              }
+          </style>
+          <div class="about-text">
+              <p>This health prediction system was created by:</p>
+          </div>
+          <table class="about-table">
+              <tr>
+                  <th>Name</th>
+                  <th>USN</th>
+              </tr>
+              <tr>
+                  <td><b>Mohammed Moin Khan</b></td>
+                  <td><b>3BR22CD034</b></td>
+              </tr>
+              <tr>
+                  <td><b>Mohammed Moinuddin</b></td>
+                  <td><b>3BR22CD035</b></td>
+              </tr>
+              <tr>
+                  <td><b>Pranav KP</b></td>
+                  <td><b>3BR22CD04</b></td>
+              </tr>
+          </table>
+      """, unsafe_allow_html=True)
 
   
 
