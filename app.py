@@ -105,7 +105,7 @@ else:
     
     # Sidebar for the welcome message above the navigation options
     with st.sidebar:
-        st.markdown(f"<h2 style='font-size: 30px; font-weight: bold;'>Welcome, {st.session_state.user_name}!</h2>", unsafe_allow_html=True)
+        #st.markdown(f"<h2 style='font-size: 30px; font-weight: bold;'>Welcome, {st.session_state.user_name}!</h2>", unsafe_allow_html=True)
         selected = option_menu('Multiple Disease Prediction System',
                                ['Diabetes Prediction',
                                 'Heart Disease Prediction',
@@ -117,6 +117,9 @@ else:
     # Display user name after login
    
     #st.sidebar.markdown(f"<h2 style='font-size: 30px; font-weight: bold;'>Welcome, {st.session_state.user_name}!</h2>", unsafe_allow_html=True)
+    def display_username():
+    if "user_name" in st.session_state:
+        st.markdown(f"### Welcome, {st.session_state.user_name}!", unsafe_allow_html=True)
 
     # Diabetes Prediction Page
     if selected == 'Diabetes Prediction':
