@@ -102,8 +102,6 @@ if "logged_in" not in st.session_state or not st.session_state.logged_in:
     else:
         signup_page()  # Show sign-up page if the user selects Sign Up
 else:
-    st.sidebar.markdown(f"<h2 style='font-size: 30px; font-weight: bold;'>Welcome, {st.session_state.user_name}!</h2>", unsafe_allow_html=True)
-
     # Sidebar for navigation
     with st.sidebar:
         selected = option_menu('Multiple Disease Prediction System',
@@ -116,6 +114,7 @@ else:
 
     # Display user name after login
    
+    st.sidebar.markdown(f"<h2 style='font-size: 30px; font-weight: bold;'>Welcome, {st.session_state.user_name}!</h2>", unsafe_allow_html=True)
 
     # Diabetes Prediction Page
     if selected == 'Diabetes Prediction':
