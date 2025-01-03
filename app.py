@@ -115,7 +115,8 @@ else:
                                default_index=0)
 
     # Display user name after login
-   
+    def check_empty_inputs(inputs):
+      return any(x == "" for x in inputs)
     #st.sidebar.markdown(f"<h2 style='font-size: 30px; font-weight: bold;'>Welcome, {st.session_state.user_name}!</h2>", unsafe_allow_html=True)
     def display_username():
       if "user_name" in st.session_state:
