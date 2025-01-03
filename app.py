@@ -113,7 +113,8 @@ else:
                                default_index=0)
 
     # Display user name after login
-    st.sidebar.write(f"Welcome, {st.session_state.user_name}!")
+    st.sidebar.markdown(f"<h2 style='font-size: 24px; font-weight: bold;'>Welcome, {st.session_state.user_name}!</h2>", unsafe_allow_html=True)
+
 
     # Diabetes Prediction Page
     if selected == 'Diabetes Prediction':
