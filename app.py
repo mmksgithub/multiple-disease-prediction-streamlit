@@ -8,28 +8,35 @@ st.set_page_config(page_title="Health Assistant",
                    layout="wide",
                    page_icon="🧑‍⚕️")
 
-    
-# getting the working directory of the main.py
+# Get the working directory
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
-# loading the saved models
+# Paths to the saved models
+diabetes_model_path = os.path.join(working_dir, 'saved_models', 'diabetes_model.sav')
+heart_disease_model_path = os.path.join(working_dir, 'saved_models', 'heart_disease_model.sav')
+parkinsons_model_path = os.path.join(working_dir, 'saved_models', 'parkinsons_model.sav')
 
-diabetes_model = pickle.load(open(f'{working_dir}/saved_models/diabetes_model.sav', 'rb'))
+# Load the models with error handling
+try:
+    diabetes_model = pickle.load(open(diabetes_model_path, 'rb'))
+    heart_disease_model = pickle.load(open(heart_disease_model_path, 'rb'))
+    parkinsons_model = pickle.load(open(parkinsons_model_path, 'rb'))
+except FileNotFoundError as e:
+    st.error(f"Error loading model: {e}. Ensure all models are in the 'saved_models' directory.")
+    st.stop()  # Stop further execution
 
-heart_disease_model = pickle.load(open(f'{working_dir}/saved_models/heart_disease_model.sav', 'rb'))
-
-parkinsons_model = pickle.load(open(f'{working_dir}/saved_models/parkinsons_model.sav', 'rb'))
-
-# sidebar for navigation
+# Sidebar for navigation
 with st.sidebar:
     selected = option_menu('Multiple Disease Prediction System',
-
                            ['Diabetes Prediction',
                             'Heart Disease Prediction',
                             'Parkinsons Prediction'],
                            menu_icon='hospital-fill',
                            icons=['activity', 'heart', 'person'],
                            default_index=0)
+
+# Pages for disease predictions (no changes here)
+
 
 
 # Diabetes Prediction Page
