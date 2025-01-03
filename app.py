@@ -122,8 +122,8 @@ else:
             st.markdown(f"### Welcome, {st.session_state.user_name}!", unsafe_allow_html=True)
 
     # About Page
-    if selected == "About Us":
-      st.markdown("<h2 style='font-size: 40px; font-weight: bold;'>About Us</h2>", unsafe_allow_html=True)
+    if selected == "About":
+      st.markdown("<h2 style='font-size: 40px; font-weight: bold;'>About</h2>", unsafe_allow_html=True)
       st.markdown("""
           <style>
               .about-text {
