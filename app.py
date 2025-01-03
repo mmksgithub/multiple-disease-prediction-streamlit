@@ -121,7 +121,23 @@ else:
     def display_username():
       if "user_name" in st.session_state:
           st.markdown(f"### Welcome, {st.session_state.user_name}!", unsafe_allow_html=True)
+    # About Page
+    if selected == "About":
+        st.title("About This Application")
 
+        # Create a DataFrame for displaying the details
+        data = {
+            "Name": ["Mohammed Moin Khan", "Mohammed Moinuddin", "Pranav kp"],
+            "USN": ["3BR22CD034", "3BR22CD035", "3BR22CD04"]
+        }
+
+        df = pd.DataFrame(data)
+
+        # Display the table with bold headers
+        st.table(df.style.set_table_styles([{
+            'selector': 'th',
+            'props': [('font-weight', 'bold')]
+        }]))
     # Diabetes Prediction Page
     if selected == 'Diabetes Prediction':
         st.title('Diabetes Prediction using ML')
