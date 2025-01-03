@@ -1,3 +1,4 @@
+from streamlit_option_menu import option_menu
 import os
 import pickle
 import streamlit as st
