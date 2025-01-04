@@ -153,16 +153,20 @@ else:
                     <th>USN</th>
                 </tr>
                 <tr>
-                    <td><b>Mohammed Moin Khan</b></td>
-                    <td><b>3BR22CD034</b></td>
+                    <td><b>Abdul Musawwir</b></td>
+                    <td><b>3BR22CS005</b></td>
                 </tr>
                 <tr>
-                    <td><b>Mohammed Moinuddin</b></td>
-                    <td><b>3BR22CD035</b></td>
+                    <td><b>Akash g</b></td>
+                    <td><b>3BR22CS008</b></td>
                 </tr>
                 <tr>
-                    <td><b>Pranav KP</b></td>
-                    <td><b>3BR22CD045</b></td>
+                    <td><b>Amith Kumar </b></td>
+                    <td><b>3BR22CS011</b></td>
+                </tr>
+                <tr>
+                    <td><b>BVN Shanmukha </b></td>
+                    <td><b>3BR22CS018</b></td>
                 </tr>
             </table>
         """, unsafe_allow_html=True)
